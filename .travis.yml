@@ -1,0 +1,6 @@
+language: r
+r: release
+
+install: Rscript -e 'install.packages( "testthat")'
+
+script: make

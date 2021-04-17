@@ -1,6 +1,8 @@
 language: r
 r: release
 
-install: Rscript -e 'install.packages( "testthat")'
+install: Rscript -e 'install.packages(c("testthat","covr"))'
 
 script: make
+
+after_success: Rscript -e 'library(covr); report(file_coverage("R/programs/_f1.R", "tests.R"))'
